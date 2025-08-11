@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2: Conditional Statements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .output {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .positive {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .negative {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .zero {
+            color: #3498db;
+            font-weight: bold;
+        }
+        input {
+            padding: 8px;
+            margin: 10px 0;
+            width: 200px;
+        }
+        button {
+            padding: 8px 15px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Task 2: Conditional Statements</h1>
+    
+    <p>Enter a number to check if it's positive, negative, or zero:</p>
+    
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button onclick="checkNumber()">Check Number</button>
+    
+    <div id="output" class="output">
+        <!-- Output will appear here -->
+    </div>
+
+    <script>
+        function checkNumber() {
+            // a) Get user input and store in variable
+            const userInput = document.getElementById('numberInput').value;
+            const number = parseFloat(userInput);
+            const outputDiv = document.getElementById('output');
+
+            // Validate input
+            if (isNaN(number)) {
+                outputDiv.innerHTML = '<p>Please enter a valid number!</p>';
+                return;
+            }
+
+            // b) if-else statement to check the number
+            let result;
+            if (number > 0) {
+                result = `<span class="positive">The number is positive.</span>`;
+            } else if (number < 0) {
+                result = `<span class="negative">The number is negative.</span>`;
+            } else {
+                result = `<span class="zero">The number is zero.</span>`;
+            }
+
+            // c) Display the appropriate message
+            outputDiv.innerHTML = `
+                <p>You entered: ${number}</p>
+                <p>${result}</p>
+            `;
+
+            // Switch statement alternative (just for demonstration)
+            let switchResult;
+            switch (true) {
+                case number > 0:
+                    switchResult = "Switch: The number is positive.";
+                    break;
+                case number < 0:
+                    switchResult = "Switch: The number is negative.";
+                    break;
+                default:
+                    switchResult = "Switch: The number is zero.";
+            }
+            console.log(switchResult);
+        }
+    </script>
+</body>
+</html>

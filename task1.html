@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1: Variable Declaration and Data Types</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .output {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .variable {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .type {
+            color: #3498db;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Task 1: Variable Declaration and Data Types</h1>
+    
+    <p>This page demonstrates JavaScript variable declaration and dynamic typing.</p>
+    
+    <button onclick="runTask1()">Run Task 1</button>
+    
+    <div id="output" class="output">
+        <!-- Output will appear here -->
+    </div>
+
+    <script>
+        function runTask1() {
+            // a) Declare variables with appropriate data types
+            let name;        // string
+            let age;         // number
+            let isStudent;   // boolean
+
+            // b) Assign appropriate values to each variable
+            name = "Alice";
+            age = 22;
+            isStudent = true;
+
+            // c) Display each variable with its data type
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = `
+                <p><span class="variable">Name:</span> ${name} <span class="type">(Type: ${typeof name})</span></p>
+                <p><span class="variable">Age:</span> ${age} <span class="type">(Type: ${typeof age})</span></p>
+                <p><span class="variable">Is Student:</span> ${isStudent} <span class="type">(Type: ${typeof isStudent})</span></p>
+            `;
+
+            // Also log to console
+            console.log("Name:", name, "Type:", typeof name);
+            console.log("Age:", age, "Type:", typeof age);
+            console.log("Is Student:", isStudent, "Type:", typeof isStudent);
+        }
+    </script>
+</body>
+</html>
